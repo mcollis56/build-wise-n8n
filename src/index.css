@@ -100,6 +100,89 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
+  }
+
+  /* Construction-specific typography */
+  .construction-heading {
+    @apply text-2xl font-bold text-foreground;
+  }
+
+  .trade-title {
+    @apply text-lg font-semibold text-primary;
+  }
+
+  .material-label {
+    @apply text-sm font-medium text-muted-foreground;
+  }
+
+  .price-display {
+    @apply text-xl font-bold text-accent;
+  }
+}
+
+@layer components {
+  /* Construction Card Components */
+  .construction-card {
+    @apply bg-card border border-border rounded-lg shadow-card transition-all duration-300 hover:shadow-elevated;
+  }
+
+  .trade-card {
+    @apply construction-card p-6 cursor-pointer hover:border-primary/50 transition-all duration-300;
+  }
+
+  .trade-card:hover {
+    @apply shadow-construction transform translate-y-[-2px];
+  }
+
+  .material-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Professional form styling */
+  .form-section {
+    @apply space-y-6 p-6 construction-card;
+  }
+
+  .checkbox-group {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3;
+  }
+
+  .price-breakdown {
+    @apply space-y-3 p-4 bg-muted/50 rounded-lg border;
+  }
+}
+
+@layer utilities {
+  .text-construction-primary {
+    color: hsl(var(--primary));
+  }
+
+  .text-construction-accent {
+    color: hsl(var(--accent));
+  }
+
+  .bg-construction-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-construction {
+    box-shadow: var(--shadow-construction);
+  }
+
+  .transition-construction {
+    transition: var(--transition-smooth);
   }
 }
